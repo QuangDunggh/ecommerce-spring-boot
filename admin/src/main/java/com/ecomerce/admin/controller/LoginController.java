@@ -28,18 +28,21 @@ public class LoginController {
     }
 
     @GetMapping("/index")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("title", "Home page");
         return "index";
     }
 
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("adminDto", new AdminDto());
+        model.addAttribute("title", "Register");
         return "register";
     }
 
     @GetMapping("/forgot-password")
     public String forgotPassword(Model model) {
+        model.addAttribute("title", "Forgot password");
         return "forgot-password";
     }
 
